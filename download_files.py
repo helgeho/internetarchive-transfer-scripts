@@ -2,7 +2,7 @@
 
 import sys
 import os
-import internetarchive
+from internetarchive import get_item
 
 collection = sys.argv[1]
 staging_path = sys.argv[2]
@@ -30,8 +30,8 @@ for line in [line.rstrip("\n") for line in list_file]:
 
 		os.system("mkdir -p " + staging_path + "/" + collection + "/" + ext)
 
-		item = internetarchive.Item(item_id)
-		file = internetarchive.File(item, filename)
+		item = get_item(item_id)
+		file = item.get_file(filename)
 		while True:
 			try:
 				file.download(staging_path + "/" + collection + "/" + ext + "/" + filename)

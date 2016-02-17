@@ -1,7 +1,7 @@
 #!/usr/bin/env python2.7
 
 import sys
-import internetarchive.search
+from internetarchive import search_items
 import os.path
 from internetarchive import get_files
 
@@ -13,7 +13,7 @@ if os.path.exists(list_filename):
 
 list_file = open(list_filename, 'w+')
 
-search = internetarchive.search.Search('collection:' + collection)
+search = search_items('collection:' + collection)
 for result in search:
 	item_id = result['identifier']
 	files = []
