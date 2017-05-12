@@ -18,7 +18,7 @@ First of all, please install https://github.com/jjjake/internetarchive to have t
 Next, please modify [`download.sh`](download.sh) according to your needs to include your paths and required filetypes.
 `download.sh` calls the python scripts and should be used to start off the transfer process.
 
-#### [`download.sh`](create_filelist.py)
+#### [`download.sh`](download.sh)
 
 To be called with `./download.sh <COLLECTION_NAME>`.<br>
 E.g., `./download.sh ArchiveIt-Collection-1234`
